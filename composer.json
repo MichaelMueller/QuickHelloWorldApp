@@ -1,7 +1,7 @@
 {
   "name": "michaelmueller/helloworldapp",
   "type": "application",
-  "description": "An example HelloWorldApp for Quick",
+  "description": "A demo HelloWorldApp for the SOA framework Quick",
   "license": "Apache-2.0",
   "authors": [
     {
@@ -11,12 +11,15 @@
   ],
   "require": {
     "php": ">=5.6",
-    "michaelmueller/quickappframework": "dev-master"
+    "michaelmueller/quickapp": "dev-master"
   },
   "autoload": {
     "psr-4": {
-      "Qck\\": ""
-    }
+      "Qck\\HelloWorldApp\\": "src"
+    },
+    "files": [
+      "src/autoload.php"
+    ]
   },
   "minimum-stability": "dev",
   "prefer-stable": true

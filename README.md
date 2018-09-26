@@ -1,4 +1,3 @@
-# Quick
+# QuickHelloWorldApp
 
-Quick Websites.
-More info will follow.
+A demo HelloWorldApp for the SOA framework Quick. More info will follow.
