@@ -8,7 +8,7 @@ $Config = new \Qck\App\Config( "HelloWorldApp" );
 $ServiceRepo->addService( $Config );
 
 // add Router \Qck\App\Router
-$Router = new \Qck\App\Router( Qck\ServiceRepo::getInstance()->get( Qck\Interfaces\App\Request::class ) );
+$Router = new \Qck\App\Router( Qck\ServiceRepo::getInstance()->get( Qck\App\Interfaces\Request::class ) );
 $Router->addController( $Router->getDefaultQuery(), \Qck\HelloWorldApp\StartController::class );
 $ServiceRepo->addService( $Router );
 

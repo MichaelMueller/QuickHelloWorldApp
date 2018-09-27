@@ -8,8 +8,8 @@ ini_set( 'display_errors', 1 );
 // this should point to the main PSR-4 Autoloader
 require_once(__DIR__ . '/../../vendor/autoload.php');
 
-/* @var $Starter Qck\Interfaces\App\Starter */
-$Starter = \Qck\ServiceRepo::getInstance()->get( Qck\Interfaces\App\Starter::class );
+/* @var $Starter Qck\App\Interfaces\Starter */
+$Starter = \Qck\ServiceRepo::getInstance()->get( Qck\App\Interfaces\Starter::class );
 
 // run application
-$Starter->run();
+$Starter->exec();

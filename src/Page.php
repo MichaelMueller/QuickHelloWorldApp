@@ -6,10 +6,10 @@ namespace Qck\HelloWorldApp;
  *
  * @author muellerm
  */
-class Page implements \Qck\Interfaces\App\Output
+class Page implements \Qck\App\Interfaces\Output
 {
 
-  function __construct( \Qck\Interfaces\App\Config $Config )
+  function __construct( \Qck\App\Interfaces\Config $Config )
   {
     $this->Config = $Config;
   }
@@ -51,17 +51,17 @@ class Page implements \Qck\Interfaces\App\Output
 
   public function getCharset()
   {
-    return \Qck\Interfaces\App\Output::CHARSET_UTF_8;
+    return \Qck\App\Interfaces\Output::CHARSET_UTF_8;
   }
 
   public function getContentType()
   {
-    return \Qck\Interfaces\App\Output::CONTENT_TYPE_TEXT_HTML;
+    return \Qck\App\Interfaces\Output::CONTENT_TYPE_TEXT_HTML;
   }
 
   /**
    *
-   * @var \Qck\Interfaces\App\Config
+   * @var \Qck\App\Interfaces\Config
    */
   protected $Config;
 
