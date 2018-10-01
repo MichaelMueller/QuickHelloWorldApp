@@ -17,6 +17,9 @@ class Page implements \Qck\App\Interfaces\Output
   public function render()
   {
     ob_start();
+
+    /* @var $Router \Qck\App\Interfaces\Router */
+    $Router = \Qck\ServiceRepo::getInstance()->get( \Qck\App\Interfaces\Router::class );
     ?>
     <!doctype html>
     <html lang="en">
@@ -32,6 +35,7 @@ class Page implements \Qck\App\Interfaces\Output
       </head>
       <body>
         <h1>Hello World on <?= $this->Config->getHostName() ?>.</h1>
+        <a href="<?= $Router->getLink( ProtectedController::class )?>">Go to protected Hello World</a>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

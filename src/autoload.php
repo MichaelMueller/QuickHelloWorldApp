@@ -3,14 +3,15 @@
 /* @var $ServiceRepo Qck\ServiceRepo */
 $ServiceRepo = Qck\ServiceRepo::getInstance();
 
-// add \Qck\App\Config
 $Config = new \Qck\App\Config( "HelloWorldApp" );
 $ServiceRepo->addService( $Config );
+$Routes = [];
+$Routes[ \Qck\App\Interfaces\Router::DEFAULT_ROUTE ] = Qck\HelloWorldApp\StartController::class;
+$Routes[ "protected" ] = Qck\HelloWorldApp\ProtectedController::class;
+$ServiceRepo->addService( new \Qck\App\RouteSource( $Routes, [ "protected" ] ) );
+$ServiceRepo->addService( new \Qck\HelloWorldApp\TestSession() );
+$ServiceRepo->addService( new \Qck\HelloWorldApp\TestUserDb );
 
-// add Router \Qck\App\Router
-$Router = new \Qck\App\Router( Qck\ServiceRepo::getInstance()->get( Qck\App\Interfaces\Request::class ) );
-$Router->addController( $Router->getDefaultQuery(), \Qck\HelloWorldApp\StartController::class );
-$ServiceRepo->addService( $Router );
 
 // add \Qck\AppConfig
 $ServiceRepo->addService( new \Qck\HelloWorldApp\Page( $Config ) );
